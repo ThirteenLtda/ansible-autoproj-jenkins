@@ -1,5 +1,32 @@
 ---
-# tasks file for 13r.autoproj-jenkins
-- roles:
-    - doudou.autoproj-jenkins
+- name: "install default jenkins plugins"
+  include_role:
+      allow_duplicates: true
+      name: geerlingguy.jenkins
+      tasks_from: plugins.yml 
+  vars:
+      jenkins_plugins:
+          - blueocean
+          - matrix-auth
+          - script-security
+          - warnings
+          - ansicolor
+          - greenballs
+          - PrioritySorter
+          - embeddable-build-status
+          - dashboard-view
+          - purge-build-queue-plugin
+
+- name: "stop Jenkins while we configure it"
+  service:
+      name: jenkins
+      state: stopped
+
+- name: "update Jenkins configuration"
+  include: jenkins-setup.yml
+
+- name: "start Jenkins"
+  service:
+      name: jenkins
+      state: started
 

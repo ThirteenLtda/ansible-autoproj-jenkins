@@ -1,0 +1,24 @@
+- name: "copy the Jenkins configuration"
+  template:
+    src: templates/var/lib/jenkins/config.xml
+    dest: /var/lib/jenkins/config.xml
+    owner: jenkins
+    group: jenkins
+    mode: 0644
+
+- name: "disable CLI remoting"
+  copy:
+    src: files/var/lib/jenkins/jenkins.CLI.xml
+    dest: /var/lib/jenkins/jenkins.CLI.xml
+    owner: jenkins
+    group: jenkins
+    mode: 0644
+
+- name: "enable master/slave security"
+  copy:
+    src: files/var/lib/jenkins/secrets/slave-to-master-security-kill-switch
+    dest: /var/lib/jenkins/secrets/slave-to-master-security-kill-switch
+    owner: jenkins
+    group: jenkins
+    mode: 0644
+
