@@ -22,3 +22,11 @@
     group: jenkins
     mode: 0644
 
+- name: "set the Jenkins URL"
+  template:
+    src: templates/var/lib/jenkins/jenkins.model.JenkinsLocationConfiguration.xml
+    dest: /var/lib/jenkins/jenkins.model.JenkinsLocationConfiguration.xml
+    owner: jenkins
+    group: jenkins
+    mode: 0644
+

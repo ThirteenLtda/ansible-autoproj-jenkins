@@ -3,3 +3,4 @@
 jenkins_plugin_timeout: 120
 jenkins_plugin_updates_expiration: 3600
 jenkins_package_state: latest
+jenkins_url: 'http://localhost:8080'
