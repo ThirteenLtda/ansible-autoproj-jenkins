@@ -1,0 +1,16 @@
+---
+# defaults file for 13r.autoproj-jenkins
+jenkins_plugin_timeout: 120
+jenkins_plugin_updates_expiration: 3600
+jenkins_package_state: latest
+jenkins_default_plugins:
+- blueocean
+- matrix-auth
+- script-security
+- warnings
+- ansicolor
+- greenballs
+- PrioritySorter
+- embeddable-build-status
+- dashboard-view
+- purge-build-queue-plugin
