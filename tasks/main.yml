@@ -24,7 +24,7 @@
       state: stopped
 
 - name: "update Jenkins configuration"
-  include: jenkins-setup.yml
+  import_tasks: jenkins-setup.yml
 
 - name: "start Jenkins"
   service:
