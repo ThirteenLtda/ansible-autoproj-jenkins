@@ -1,7 +1,5 @@
 ---
 - name: "install default jenkins plugins"
-  tags:
-      - install
   include_role:
       allow_duplicates: true
       name: geerlingguy.jenkins

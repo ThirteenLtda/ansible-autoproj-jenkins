@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<slave>
+  <name>autoproj-jenkins bookkeeping</name>
+  <description></description>
+  <remoteFS>/var/lib/jenkins/jobs/bookkeeping</remoteFS>
+  <numExecutors>1</numExecutors>
+  <mode>EXCLUSIVE</mode>
+  <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
+  <launcher class="hudson.slaves.CommandLauncher">
+    <agentCommand>/usr/local/bin/jenkins_start_slave</agentCommand>
+  </launcher>
+  <label>autoproj-jenkins-bookkeeping</label>
+  <nodeProperties/>
+</slave>

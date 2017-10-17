@@ -30,3 +30,21 @@
     group: jenkins
     mode: 0644
 
+- name: "copy the bookkeeping agent start script"
+  copy:
+    src: files/usr/local/bin/jenkins_agent_start
+    dest: /usr/local/bin/jenkins_agent_start
+    owner: root
+    group: root
+    mode: 0755
+
+- name: "create directory for the bookkeeping agent"
+  file: path=/var/lib/jenkins/nodes/autoproj-jenkins-bookkeeping state=directory
+
+- name: "create the bookkeeping agent"
+  copy:
+    src: files/var/lib/jenkins/nodes/autoproj-jenkins-bookkeeping/config.xml
+    dest: /var/lib/jenkins/nodes/autoproj-jenkins-bookkeeping/config.xml
+    owner: jenkins
+    group: jenkins
+    mode: 0644
