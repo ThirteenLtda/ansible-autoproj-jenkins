@@ -16,6 +16,7 @@
           - embeddable-build-status
           - dashboard-view
           - purge-build-queue-plugin
+          - run-selector
 
 - name: "stop Jenkins while we configure it"
   service:
